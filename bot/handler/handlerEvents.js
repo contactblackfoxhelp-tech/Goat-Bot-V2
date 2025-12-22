@@ -260,6 +260,8 @@ module.exports = function (api, threadModel, userModel, dashBoardModel, globalMo
 				else
 					return true;
 
+			if (!command) return;
+			
 			let { usePrefix = true } = command.config;
 			if (!usePrefix && body.startsWith(prefix)) {
 						return await message.reply(`The command "${commandName}" does not require a prefix.`);
